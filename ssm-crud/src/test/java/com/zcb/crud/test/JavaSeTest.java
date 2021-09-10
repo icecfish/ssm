@@ -10,5 +10,6 @@ public class JavaSeTest {
     @Test
     public void test(){
         System.out.println("just test git");
+        System.out.println("hellow git-fix-hot");
     }
 }
