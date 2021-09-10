@@ -13,5 +13,6 @@ public class JavaSeTest {
         System.out.println("hellow git-fix-hot");
         System.out.println("hello master 3th！");
         System.out.println("hello git-fix-hot 2th");
+        System.out.println("test push");
     }
 }
