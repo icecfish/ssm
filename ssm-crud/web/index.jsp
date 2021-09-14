@@ -486,8 +486,9 @@
         if(!check_email_input_id("#email_edit_input",$(this).attr("edit_id"))){
             return false;
         };
-        //知识，此处可以选择type为post，在data中传入一个_method=put来使用put请求。
-        //使用type=put请求需要加入一个过滤器，否则tomcat在获取请求方式，拿不到method=post时，会用自己的map代替request域中的map，并不会将data中数据放入该map中，导致controller层拿不到数据
+        //知识，方法一，此处可以选择type为post，在data中传入一个_method=put来使用put请求。
+        //方法二，如果使用type=put请求需要加入一个过滤器，该过滤器将数据放入一个自己的map中，并会重写request.getParameter方法，使其返回自己的map
+        // 如果不加入过滤器tomcat在获取请求方式，拿不到method=post时，不会将data中数据放入该map中，导致controller层拿不到数据
         $.ajax({
             url:"emp/"+$(this).attr("edit_id"),
             type:"PUT",
